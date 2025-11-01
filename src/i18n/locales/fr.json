@@ -1,0 +1,49 @@
+{
+  "app": {
+    "title": "Flux de Vibrations",
+    "signOut": "Se Déconnecter"
+  },
+  "hero": {
+    "title": "Partagez Vos Vibrations",
+    "subtitle": "Publiez des photos, des blogs ou des pensées et découvrez les émotions derrière chaque histoire avec l'analyse des sentiments alimentée par l'IA"
+  },
+  "createPost": {
+    "placeholder": "À quoi pensez-vous ? ✨",
+    "addImage": "Ajouter une Image",
+    "post": "Publier",
+    "posting": "Publication...",
+    "remove": "Supprimer",
+    "success": "Publication créée ! ✨",
+    "error": "Échec de la création de la publication",
+    "emptyError": "Veuillez écrire quelque chose !"
+  },
+  "postFeed": {
+    "title": "Dernières Publications",
+    "empty": "Aucune publication pour le moment. Soyez le premier à partager ! ✨",
+    "delete": "Supprimer",
+    "deleteSuccess": "Publication supprimée avec succès",
+    "deleteError": "Échec de la suppression de la publication",
+    "deleteConfirm": "Êtes-vous sûr de vouloir supprimer cette publication ?"
+  },
+  "auth": {
+    "signIn": "Se Connecter",
+    "signUp": "S'inscrire",
+    "email": "Email",
+    "password": "Mot de Passe",
+    "dontHaveAccount": "Vous n'avez pas de compte ?",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "signInSuccess": "Connecté avec succès !",
+    "signUpSuccess": "Compte créé avec succès !",
+    "authError": "Échec de l'authentification"
+  },
+  "sentiment": {
+    "happy": "Heureux",
+    "sad": "Triste",
+    "excited": "Excité",
+    "angry": "En Colère",
+    "neutral": "Neutre",
+    "thoughtful": "Réfléchi",
+    "anxious": "Anxieux",
+    "peaceful": "Paisible"
+  }
+}

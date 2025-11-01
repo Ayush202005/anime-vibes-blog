@@ -1,0 +1,49 @@
+{
+  "app": {
+    "title": "Vibe Feed",
+    "signOut": "Sign Out"
+  },
+  "hero": {
+    "title": "Share Your Vibes",
+    "subtitle": "Post photos, blogs, or thoughts and discover the emotions behind every story with AI-powered sentiment analysis"
+  },
+  "createPost": {
+    "placeholder": "What's on your mind? ✨",
+    "addImage": "Add Image",
+    "post": "Post",
+    "posting": "Posting...",
+    "remove": "Remove",
+    "success": "Post created! ✨",
+    "error": "Failed to create post",
+    "emptyError": "Please write something!"
+  },
+  "postFeed": {
+    "title": "Latest Posts",
+    "empty": "No posts yet. Be the first to share! ✨",
+    "delete": "Delete",
+    "deleteSuccess": "Post deleted successfully",
+    "deleteError": "Failed to delete post",
+    "deleteConfirm": "Are you sure you want to delete this post?"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "dontHaveAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?",
+    "signInSuccess": "Signed in successfully!",
+    "signUpSuccess": "Account created successfully!",
+    "authError": "Authentication failed"
+  },
+  "sentiment": {
+    "happy": "Happy",
+    "sad": "Sad",
+    "excited": "Excited",
+    "angry": "Angry",
+    "neutral": "Neutral",
+    "thoughtful": "Thoughtful",
+    "anxious": "Anxious",
+    "peaceful": "Peaceful"
+  }
+}

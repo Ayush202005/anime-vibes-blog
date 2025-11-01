@@ -1,0 +1,49 @@
+{
+  "app": {
+    "title": "Stimmungs-Feed",
+    "signOut": "Abmelden"
+  },
+  "hero": {
+    "title": "Teile Deine Stimmung",
+    "subtitle": "Veröffentliche Fotos, Blogs oder Gedanken und entdecke die Emotionen hinter jeder Geschichte mit KI-gestützter Stimmungsanalyse"
+  },
+  "createPost": {
+    "placeholder": "Was denkst du? ✨",
+    "addImage": "Bild Hinzufügen",
+    "post": "Posten",
+    "posting": "Wird gepostet...",
+    "remove": "Entfernen",
+    "success": "Beitrag erstellt! ✨",
+    "error": "Fehler beim Erstellen des Beitrags",
+    "emptyError": "Bitte schreibe etwas!"
+  },
+  "postFeed": {
+    "title": "Neueste Beiträge",
+    "empty": "Noch keine Beiträge. Sei der Erste, der teilt! ✨",
+    "delete": "Löschen",
+    "deleteSuccess": "Beitrag erfolgreich gelöscht",
+    "deleteError": "Fehler beim Löschen des Beitrags",
+    "deleteConfirm": "Möchtest du diesen Beitrag wirklich löschen?"
+  },
+  "auth": {
+    "signIn": "Anmelden",
+    "signUp": "Registrieren",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "dontHaveAccount": "Noch kein Konto?",
+    "alreadyHaveAccount": "Bereits ein Konto?",
+    "signInSuccess": "Erfolgreich angemeldet!",
+    "signUpSuccess": "Konto erfolgreich erstellt!",
+    "authError": "Authentifizierung fehlgeschlagen"
+  },
+  "sentiment": {
+    "happy": "Glücklich",
+    "sad": "Traurig",
+    "excited": "Aufgeregt",
+    "angry": "Wütend",
+    "neutral": "Neutral",
+    "thoughtful": "Nachdenklich",
+    "anxious": "Ängstlich",
+    "peaceful": "Friedlich"
+  }
+}

@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 
 export const Auth = () => {
+  const { t } = useTranslation();
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,17 +24,17 @@ export const Auth = () => {
           password,
         });
         if (error) throw error;
-        toast.success("Welcome back!");
+        toast.success(t('auth.signInSuccess'));
       } else {
         const { error } = await supabase.auth.signUp({
           email,
           password,
         });
         if (error) throw error;
-        toast.success("Account created! You're logged in.");
+        toast.success(t('auth.signUpSuccess'));
       }
     } catch (error: any) {
-      toast.error(error.message);
+      toast.error(error.message || t('auth.authError'));
     } finally {
       setLoading(false);
     }
@@ -43,14 +45,14 @@ export const Auth = () => {
       <Card className="w-full max-w-md border-primary/20 shadow-[var(--shadow-card)] bg-card/80 backdrop-blur-sm">
         <CardHeader>
           <CardTitle className="text-2xl text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            {isLogin ? "Welcome Back!" : "Join Us!"}
+            {isLogin ? t('auth.signIn') : t('auth.signUp')}
           </CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleAuth} className="space-y-4">
             <Input
               type="email"
-              placeholder="Email"
+              placeholder={t('auth.email')}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -58,7 +60,7 @@ export const Auth = () => {
             />
             <Input
               type="password"
-              placeholder="Password"
+              placeholder={t('auth.password')}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -69,7 +71,7 @@ export const Auth = () => {
               disabled={loading}
               className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity"
             >
-              {loading ? "Loading..." : isLogin ? "Login" : "Sign Up"}
+              {loading ? "Loading..." : isLogin ? t('auth.signIn') : t('auth.signUp')}
             </Button>
           </form>
           <Button
@@ -77,7 +79,7 @@ export const Auth = () => {
             onClick={() => setIsLogin(!isLogin)}
             className="w-full mt-4 text-muted-foreground hover:text-foreground"
           >
-            {isLogin ? "Need an account? Sign up" : "Have an account? Login"}
+            {isLogin ? t('auth.dontHaveAccount') : t('auth.alreadyHaveAccount')}
           </Button>
         </CardContent>
       </Card>

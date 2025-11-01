@@ -1,0 +1,49 @@
+{
+  "app": {
+    "title": "氛围动态",
+    "signOut": "退出登录"
+  },
+  "hero": {
+    "title": "分享你的心情",
+    "subtitle": "发布照片、博客或想法，通过AI驱动的情感分析发现每个故事背后的情绪"
+  },
+  "createPost": {
+    "placeholder": "你在想什么？✨",
+    "addImage": "添加图片",
+    "post": "发布",
+    "posting": "发布中...",
+    "remove": "删除",
+    "success": "帖子创建成功！✨",
+    "error": "创建帖子失败",
+    "emptyError": "请写点什么！"
+  },
+  "postFeed": {
+    "title": "最新帖子",
+    "empty": "还没有帖子。成为第一个分享的人！✨",
+    "delete": "删除",
+    "deleteSuccess": "帖子删除成功",
+    "deleteError": "删除帖子失败",
+    "deleteConfirm": "确定要删除这个帖子吗？"
+  },
+  "auth": {
+    "signIn": "登录",
+    "signUp": "注册",
+    "email": "邮箱",
+    "password": "密码",
+    "dontHaveAccount": "还没有账户？",
+    "alreadyHaveAccount": "已有账户？",
+    "signInSuccess": "登录成功！",
+    "signUpSuccess": "账户创建成功！",
+    "authError": "认证失败"
+  },
+  "sentiment": {
+    "happy": "开心",
+    "sad": "伤心",
+    "excited": "兴奋",
+    "angry": "生气",
+    "neutral": "中性",
+    "thoughtful": "深思",
+    "anxious": "焦虑",
+    "peaceful": "平静"
+  }
+}

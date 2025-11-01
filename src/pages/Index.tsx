@@ -3,11 +3,14 @@ import { supabase } from "@/integrations/supabase/client";
 import { Auth } from "@/components/Auth";
 import { CreatePost } from "@/components/CreatePost";
 import { PostFeed } from "@/components/PostFeed";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { Button } from "@/components/ui/button";
 import { Sparkles, LogOut } from "lucide-react";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 
 const Index = () => {
+  const { t } = useTranslation();
   const [user, setUser] = useState<any>(null);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
 
@@ -45,16 +48,19 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent flex items-center gap-2">
             <Sparkles className="h-6 w-6 md:h-8 md:w-8 text-primary" />
-            Vibe Feed
+            {t('app.title')}
           </h1>
-          <Button
-            onClick={handleSignOut}
-            variant="outline"
-            className="border-border hover:bg-muted"
-          >
-            <LogOut className="mr-2 h-4 w-4" />
-            Sign Out
-          </Button>
+          <div className="flex items-center gap-2">
+            <LanguageSwitcher />
+            <Button
+              onClick={handleSignOut}
+              variant="outline"
+              className="border-border hover:bg-muted"
+            >
+              <LogOut className="mr-2 h-4 w-4" />
+              {t('app.signOut')}
+            </Button>
+          </div>
         </div>
       </header>
 
@@ -63,10 +69,10 @@ const Index = () => {
         {/* Hero Section */}
         <section className="text-center py-12 space-y-4">
           <h2 className="text-4xl md:text-6xl font-bold bg-[var(--gradient-hero)] bg-clip-text text-transparent animate-in fade-in duration-700">
-            Share Your Vibes
+            {t('hero.title')}
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Post photos, blogs, or thoughts and discover the emotions behind every story with AI-powered sentiment analysis
+            {t('hero.subtitle')}
           </p>
         </section>
 
@@ -78,7 +84,7 @@ const Index = () => {
         {/* Posts Feed */}
         <section>
           <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Latest Posts
+            {t('postFeed.title')}
           </h3>
           <PostFeed refreshTrigger={refreshTrigger} />
         </section>

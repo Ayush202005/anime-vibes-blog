@@ -1,0 +1,49 @@
+{
+  "app": {
+    "title": "Feed de Vibras",
+    "signOut": "Cerrar Sesión"
+  },
+  "hero": {
+    "title": "Comparte Tus Vibras",
+    "subtitle": "Publica fotos, blogs o pensamientos y descubre las emociones detrás de cada historia con análisis de sentimientos impulsado por IA"
+  },
+  "createPost": {
+    "placeholder": "¿Qué estás pensando? ✨",
+    "addImage": "Agregar Imagen",
+    "post": "Publicar",
+    "posting": "Publicando...",
+    "remove": "Eliminar",
+    "success": "¡Publicación creada! ✨",
+    "error": "Error al crear publicación",
+    "emptyError": "¡Por favor escribe algo!"
+  },
+  "postFeed": {
+    "title": "Últimas Publicaciones",
+    "empty": "No hay publicaciones aún. ¡Sé el primero en compartir! ✨",
+    "delete": "Eliminar",
+    "deleteSuccess": "Publicación eliminada exitosamente",
+    "deleteError": "Error al eliminar publicación",
+    "deleteConfirm": "¿Estás seguro de que quieres eliminar esta publicación?"
+  },
+  "auth": {
+    "signIn": "Iniciar Sesión",
+    "signUp": "Registrarse",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "dontHaveAccount": "¿No tienes una cuenta?",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+    "signInSuccess": "¡Sesión iniciada exitosamente!",
+    "signUpSuccess": "¡Cuenta creada exitosamente!",
+    "authError": "Autenticación fallida"
+  },
+  "sentiment": {
+    "happy": "Feliz",
+    "sad": "Triste",
+    "excited": "Emocionado",
+    "angry": "Enojado",
+    "neutral": "Neutral",
+    "thoughtful": "Pensativo",
+    "anxious": "Ansioso",
+    "peaceful": "Pacífico"
+  }
+}

@@ -5,12 +5,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { toast } from "sonner";
 import { ImagePlus, Sparkles } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface CreatePostProps {
   onPostCreated: () => void;
 }
 
 export const CreatePost = ({ onPostCreated }: CreatePostProps) => {
+  const { t } = useTranslation();
   const [content, setContent] = useState("");
   const [image, setImage] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
@@ -31,7 +33,7 @@ export const CreatePost = ({ onPostCreated }: CreatePostProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!content.trim()) {
-      toast.error("Please write something!");
+      toast.error(t('createPost.emptyError'));
       return;
     }
 
@@ -84,13 +86,13 @@ export const CreatePost = ({ onPostCreated }: CreatePostProps) => {
 
       if (insertError) throw insertError;
 
-      toast.success("Post created! ✨");
+      toast.success(t('createPost.success'));
       setContent("");
       setImage(null);
       setPreview(null);
       onPostCreated();
     } catch (error: any) {
-      toast.error(error.message || "Failed to create post");
+      toast.error(error.message || t('createPost.error'));
       console.error("Error creating post:", error);
     } finally {
       setLoading(false);
@@ -101,7 +103,7 @@ export const CreatePost = ({ onPostCreated }: CreatePostProps) => {
     <Card className="p-6 border-primary/20 shadow-[var(--shadow-card)] bg-card/80 backdrop-blur-sm">
       <form onSubmit={handleSubmit} className="space-y-4">
         <Textarea
-          placeholder="What's on your mind? ✨"
+          placeholder={t('createPost.placeholder')}
           value={content}
           onChange={(e) => setContent(e.target.value)}
           className="min-h-[120px] border-border bg-input resize-none"
@@ -120,7 +122,7 @@ export const CreatePost = ({ onPostCreated }: CreatePostProps) => {
                 setPreview(null);
               }}
             >
-              Remove
+              {t('createPost.remove')}
             </Button>
           </div>
         )}
@@ -140,7 +142,7 @@ export const CreatePost = ({ onPostCreated }: CreatePostProps) => {
               onClick={() => document.querySelector('input[type="file"]')?.dispatchEvent(new MouseEvent('click'))}
             >
               <ImagePlus className="mr-2 h-4 w-4" />
-              Add Image
+              {t('createPost.addImage')}
             </Button>
           </label>
           
@@ -150,7 +152,7 @@ export const CreatePost = ({ onPostCreated }: CreatePostProps) => {
             className="flex-1 bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity"
           >
             <Sparkles className="mr-2 h-4 w-4" />
-            {loading ? "Posting..." : "Post"}
+            {loading ? t('createPost.posting') : t('createPost.post')}
           </Button>
         </div>
       </form>
