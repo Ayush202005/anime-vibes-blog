@@ -23,7 +23,7 @@ export type Database = {
           sentiment_label: string | null
           sentiment_score: number | null
           updated_at: string | null
-          user_id: string | null
+          user_id: string
         }
         Insert: {
           content: string
@@ -33,7 +33,7 @@ export type Database = {
           sentiment_label?: string | null
           sentiment_score?: number | null
           updated_at?: string | null
-          user_id?: string | null
+          user_id: string
         }
         Update: {
           content?: string
@@ -43,7 +43,7 @@ export type Database = {
           sentiment_label?: string | null
           sentiment_score?: number | null
           updated_at?: string | null
-          user_id?: string | null
+          user_id?: string
         }
         Relationships: []
       }
