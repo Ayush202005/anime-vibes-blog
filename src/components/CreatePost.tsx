@@ -59,9 +59,12 @@ export const CreatePost = ({ onPostCreated }: CreatePostProps) => {
         imageUrl = publicUrl;
       }
 
-      // Analyze sentiment
+      // Analyze sentiment (include image URL if available)
       const sentimentResponse = await supabase.functions.invoke('analyze-sentiment', {
-        body: { content }
+        body: { 
+          content,
+          imageUrl: imageUrl 
+        }
       });
 
       if (sentimentResponse.error) throw sentimentResponse.error;

@@ -12,11 +12,11 @@ serve(async (req) => {
   }
 
   try {
-    const { content } = await req.json();
+    const { content, imageUrl } = await req.json();
     
-    if (!content) {
+    if (!content && !imageUrl) {
       return new Response(
-        JSON.stringify({ error: 'Content is required' }),
+        JSON.stringify({ error: 'Content or image is required' }),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 }
       );
     }
@@ -24,6 +24,23 @@ serve(async (req) => {
     const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
     if (!LOVABLE_API_KEY) {
       throw new Error('LOVABLE_API_KEY is not configured');
+    }
+
+    // Build the user message content
+    const userContent: any[] = [];
+    
+    if (content) {
+      userContent.push({
+        type: 'text',
+        text: content
+      });
+    }
+    
+    if (imageUrl) {
+      userContent.push({
+        type: 'image_url',
+        image_url: { url: imageUrl }
+      });
     }
 
     const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
@@ -37,16 +54,16 @@ serve(async (req) => {
         messages: [
           {
             role: 'system',
-            content: `You are a sentiment analysis expert. Analyze the emotional tone of the given text and respond with ONLY a JSON object in this exact format:
+            content: `You are a sentiment analysis expert. Analyze the emotional tone of the given content (text and/or image) and respond with ONLY a JSON object in this exact format:
 {
   "label": "one of: happy, sad, excited, angry, neutral, thoughtful, anxious, peaceful",
   "score": a number between -1 and 1 (-1 most negative, 1 most positive)
 }
-Do not include any other text or explanation.`
+Consider both the text content and visual elements in the image. Do not include any other text or explanation.`
           },
           {
             role: 'user',
-            content: content
+            content: userContent
           }
         ],
       }),
