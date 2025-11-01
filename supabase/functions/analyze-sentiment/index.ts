@@ -88,8 +88,17 @@ Consider both the text content and visual elements in the image. Do not include 
     const data = await response.json();
     const aiResponse = data.choices[0].message.content;
     
-    // Parse the JSON response from AI
-    const sentiment = JSON.parse(aiResponse.trim());
+    // Parse the JSON response from AI, removing markdown code blocks if present
+    let cleanedResponse = aiResponse.trim();
+    if (cleanedResponse.startsWith('```json')) {
+      cleanedResponse = cleanedResponse.slice(7); // Remove ```json
+    } else if (cleanedResponse.startsWith('```')) {
+      cleanedResponse = cleanedResponse.slice(3); // Remove ```
+    }
+    if (cleanedResponse.endsWith('```')) {
+      cleanedResponse = cleanedResponse.slice(0, -3); // Remove trailing ```
+    }
+    const sentiment = JSON.parse(cleanedResponse.trim());
     
     return new Response(
       JSON.stringify(sentiment),
