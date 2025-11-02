@@ -45,5 +45,18 @@
     "thoughtful": "深思",
     "anxious": "焦虑",
     "peaceful": "平静"
+  },
+  "comments": {
+    "title": "评论",
+    "placeholder": "写评论...",
+    "post": "发布评论",
+    "posting": "发布中...",
+    "success": "评论发布成功！✨",
+    "error": "发布评论失败",
+    "emptyError": "请写点什么！",
+    "loginRequired": "请登录后评论",
+    "empty": "还没有评论。成为第一个评论的人！✨",
+    "deleteSuccess": "评论删除成功",
+    "deleteError": "删除评论失败"
   }
 }

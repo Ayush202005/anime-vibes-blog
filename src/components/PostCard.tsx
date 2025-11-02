@@ -1,10 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Heart, Smile, Frown, Zap, Brain, Wind, AlertCircle, CloudRain, Trash2 } from "lucide-react";
+import { Heart, Smile, Frown, Zap, Brain, Wind, AlertCircle, CloudRain, Trash2, MessageCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -16,6 +17,12 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { Comments } from "./Comments";
 
 interface Post {
   id: string;
@@ -46,12 +53,33 @@ const sentimentConfig: Record<string, { icon: any; color: string }> = {
 
 export const PostCard = ({ post, onDelete, currentUserId }: PostCardProps) => {
   const { t } = useTranslation();
+  const [commentsOpen, setCommentsOpen] = useState(false);
+  const [commentCount, setCommentCount] = useState(0);
+  
   const sentiment = post.sentiment_label 
     ? sentimentConfig[post.sentiment_label as keyof typeof sentimentConfig] 
     : null;
   
   const SentimentIcon = sentiment?.icon || Smile;
   const isOwner = currentUserId === post.user_id;
+
+  useEffect(() => {
+    fetchCommentCount();
+  }, [post.id]);
+
+  const fetchCommentCount = async () => {
+    try {
+      const { count, error } = await supabase
+        .from('comments')
+        .select('*', { count: 'exact', head: true })
+        .eq('post_id', post.id);
+
+      if (error) throw error;
+      setCommentCount(count || 0);
+    } catch (error) {
+      console.error('Error fetching comment count:', error);
+    }
+  };
 
   const handleDelete = async () => {
     try {
@@ -142,6 +170,22 @@ export const PostCard = ({ post, onDelete, currentUserId }: PostCardProps) => {
             )}
           </div>
         </div>
+
+        <Collapsible open={commentsOpen} onOpenChange={setCommentsOpen}>
+          <CollapsibleTrigger asChild>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="w-full justify-start gap-2 text-muted-foreground hover:text-foreground"
+            >
+              <MessageCircle className="h-4 w-4" />
+              {t('comments.title')} {commentCount > 0 && `(${commentCount})`}
+            </Button>
+          </CollapsibleTrigger>
+          <CollapsibleContent className="pt-4">
+            <Comments postId={post.id} currentUserId={currentUserId} />
+          </CollapsibleContent>
+        </Collapsible>
       </div>
     </Card>
   );

@@ -45,5 +45,18 @@
     "thoughtful": "Nachdenklich",
     "anxious": "Ängstlich",
     "peaceful": "Friedlich"
+  },
+  "comments": {
+    "title": "Kommentare",
+    "placeholder": "Schreibe einen Kommentar...",
+    "post": "Kommentar Posten",
+    "posting": "Wird gepostet...",
+    "success": "Kommentar gepostet! ✨",
+    "error": "Fehler beim Posten des Kommentars",
+    "emptyError": "Bitte schreibe etwas!",
+    "loginRequired": "Bitte melde dich an, um zu kommentieren",
+    "empty": "Noch keine Kommentare. Sei der Erste, der kommentiert! ✨",
+    "deleteSuccess": "Kommentar erfolgreich gelöscht",
+    "deleteError": "Fehler beim Löschen des Kommentars"
   }
 }

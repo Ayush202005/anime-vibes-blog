@@ -45,5 +45,18 @@
     "thoughtful": "Thoughtful",
     "anxious": "Anxious",
     "peaceful": "Peaceful"
+  },
+  "comments": {
+    "title": "Comments",
+    "placeholder": "Write a comment...",
+    "post": "Post Comment",
+    "posting": "Posting...",
+    "success": "Comment posted! ✨",
+    "error": "Failed to post comment",
+    "emptyError": "Please write something!",
+    "loginRequired": "Please sign in to comment",
+    "empty": "No comments yet. Be the first to comment! ✨",
+    "deleteSuccess": "Comment deleted successfully",
+    "deleteError": "Failed to delete comment"
   }
 }

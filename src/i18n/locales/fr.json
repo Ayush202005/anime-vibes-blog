@@ -45,5 +45,18 @@
     "thoughtful": "Réfléchi",
     "anxious": "Anxieux",
     "peaceful": "Paisible"
+  },
+  "comments": {
+    "title": "Commentaires",
+    "placeholder": "Écrire un commentaire...",
+    "post": "Publier le Commentaire",
+    "posting": "Publication...",
+    "success": "Commentaire publié ! ✨",
+    "error": "Échec de la publication du commentaire",
+    "emptyError": "Veuillez écrire quelque chose !",
+    "loginRequired": "Veuillez vous connecter pour commenter",
+    "empty": "Pas encore de commentaires. Soyez le premier à commenter ! ✨",
+    "deleteSuccess": "Commentaire supprimé avec succès",
+    "deleteError": "Échec de la suppression du commentaire"
   }
 }
