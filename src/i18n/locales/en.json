@@ -58,5 +58,17 @@
     "empty": "No comments yet. Be the first to comment! ✨",
     "deleteSuccess": "Comment deleted successfully",
     "deleteError": "Failed to delete comment"
+  },
+  "dashboard": {
+    "title": "Sentiment Analytics",
+    "subtitle": "Interactive visualization of sentiment analysis across all posts",
+    "totalPosts": "Total Analyzed Posts",
+    "avgSentiment": "Average Sentiment",
+    "mostCommon": "Most Common",
+    "outOf1": "out of 1.0",
+    "distribution": "Distribution",
+    "trends": "Trends",
+    "breakdown": "Breakdown",
+    "noData": "No sentiment data available yet. Create posts to see analytics!"
   }
 }

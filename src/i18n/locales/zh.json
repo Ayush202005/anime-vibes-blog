@@ -58,5 +58,17 @@
     "empty": "还没有评论。成为第一个评论的人！✨",
     "deleteSuccess": "评论删除成功",
     "deleteError": "删除评论失败"
+  },
+  "dashboard": {
+    "title": "情感分析",
+    "subtitle": "所有帖子情感分析的交互式可视化",
+    "totalPosts": "已分析帖子",
+    "avgSentiment": "平均情感",
+    "mostCommon": "最常见",
+    "outOf1": "满分1.0",
+    "distribution": "分布",
+    "trends": "趋势",
+    "breakdown": "细分",
+    "noData": "暂无情感数据。创建帖子以查看分析！"
   }
 }
