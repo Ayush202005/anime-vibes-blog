@@ -3,6 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Auth } from "@/components/Auth";
 import { CreatePost } from "@/components/CreatePost";
 import { PostFeed } from "@/components/PostFeed";
+import { SentimentDashboard } from "@/components/SentimentDashboard";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { Button } from "@/components/ui/button";
 import { Sparkles, LogOut } from "lucide-react";
@@ -79,6 +80,11 @@ const Index = () => {
         {/* Create Post */}
         <section className="max-w-2xl mx-auto">
           <CreatePost onPostCreated={handlePostCreated} />
+        </section>
+
+        {/* Sentiment Dashboard */}
+        <section>
+          <SentimentDashboard />
         </section>
 
         {/* Posts Feed */}

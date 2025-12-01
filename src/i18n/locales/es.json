@@ -58,5 +58,17 @@
     "empty": "No hay comentarios aún. ¡Sé el primero en comentar! ✨",
     "deleteSuccess": "Comentario eliminado exitosamente",
     "deleteError": "Error al eliminar comentario"
+  },
+  "dashboard": {
+    "title": "Análisis de Sentimientos",
+    "subtitle": "Visualización interactiva del análisis de sentimientos en todas las publicaciones",
+    "totalPosts": "Publicaciones Analizadas",
+    "avgSentiment": "Sentimiento Promedio",
+    "mostCommon": "Más Común",
+    "outOf1": "de 1.0",
+    "distribution": "Distribución",
+    "trends": "Tendencias",
+    "breakdown": "Desglose",
+    "noData": "Aún no hay datos de sentimiento disponibles. ¡Crea publicaciones para ver análisis!"
   }
 }

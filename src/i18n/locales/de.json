@@ -58,5 +58,17 @@
     "empty": "Noch keine Kommentare. Sei der Erste, der kommentiert! ✨",
     "deleteSuccess": "Kommentar erfolgreich gelöscht",
     "deleteError": "Fehler beim Löschen des Kommentars"
+  },
+  "dashboard": {
+    "title": "Sentiment-Analyse",
+    "subtitle": "Interaktive Visualisierung der Sentiment-Analyse über alle Beiträge",
+    "totalPosts": "Analysierte Beiträge",
+    "avgSentiment": "Durchschnittliches Sentiment",
+    "mostCommon": "Am Häufigsten",
+    "outOf1": "von 1.0",
+    "distribution": "Verteilung",
+    "trends": "Trends",
+    "breakdown": "Aufschlüsselung",
+    "noData": "Noch keine Sentiment-Daten verfügbar. Erstellen Sie Beiträge, um Analysen zu sehen!"
   }
 }
